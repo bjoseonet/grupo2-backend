@@ -4,9 +4,9 @@
 const db = require('../db/dbw');
 
 const index = (req, res) => {
-  const sql = 'SELECT * FROM coment';
-  // const sql =
-  //   'SELECT coment.id, usuarios.email, coment.coment,coment.date_coment FROM coment JOIN usuarios ON coment.usuario = usuarios.id';
+  //const sql = 'SELECT * FROM coment';
+  const sql =
+    'SELECT coment.id, usuarios.email, coment.coment,coment.date_coment FROM coment JOIN usuarios ON coment.usuario = usuarios.id';
   db.query(sql, (error, rows) => {
     if (error) {
       return res.status(500).json({ error: 'Intente mas tarde' });
